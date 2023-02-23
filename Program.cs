@@ -8,6 +8,11 @@ Console.WriteLine("Welcome to the Enthusiastic Moose Simulator!");
 Console.WriteLine("--------------------------------------------");
 Console.WriteLine();
 
+CanadaQuestion();
+EnthusiasticQuestion();
+LoveCSharpQuestion();
+SecretQuestion();
+
 
 void MooseSays(string message)
 {
@@ -45,26 +50,35 @@ MooseSays("I really am enthusiastic");
 
 bool MooseAsks(string question)
 {
+    // displays the question and waiting for response
     Console.Write($"{question} (Y/N): ");
+    //  declaring a new string var named answer and stores the lowercase answer
+    // console.readline always returns a string
     string answer = Console.ReadLine().ToLower();
 
+// while the answer does not = y and does not = n
     while (answer != "y" && answer != "n")
     {
+        // it will write the question UNTIL we get a y or an N 
         Console.Write($"{question} (Y/N): ");
+        // wont move on until you give it something in the console to read
+        // without it, creates an infinite loop
         answer = Console.ReadLine().ToLower();
     }
+    // will abort the operation about and move on to the next step (leaves the while loop)
 
+    // if they answer y = true
     if (answer == "y")
     {
         return true;
     }
     else
     {
+        // otherwise its false
         return false;
     }
 }
 
-CanadaQuestion();
 
 void CanadaQuestion()
 {
@@ -79,7 +93,6 @@ void CanadaQuestion()
     }
 }
 
-EnthusiasticQuestion();
 
 void EnthusiasticQuestion()
 {
@@ -94,7 +107,6 @@ void EnthusiasticQuestion()
     }
 }
 
-LoveCSharpQuestion();
 
 void LoveCSharpQuestion()
 {
@@ -109,7 +121,6 @@ void LoveCSharpQuestion()
     }
 }
 
-SecretQuestion();
 
 void SecretQuestion()
 {
